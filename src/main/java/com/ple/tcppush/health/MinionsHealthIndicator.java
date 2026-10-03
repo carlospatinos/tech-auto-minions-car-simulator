@@ -1,15 +1,16 @@
-package com.example.tcppush.health;
-
-import com.example.tcppush.minion.MinionManager;
-import com.example.tcppush.minion.MinionState;
-import com.example.tcppush.minion.MinionStatus;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
-import org.springframework.stereotype.Component;
+package com.ple.tcppush.health;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.stereotype.Component;
+
+import com.ple.tcppush.minion.MinionManager;
+import com.ple.tcppush.minion.MinionState;
+import com.ple.tcppush.minion.MinionStatus;
 
 /** Exposed under /actuator/health as the "minions" component. */
 @Component("minions")

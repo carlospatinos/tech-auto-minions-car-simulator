@@ -1,4 +1,4 @@
-package com.example.tcppush.minion;
+package com.ple.tcppush.minion;
 
 public class MinionNotFoundException extends RuntimeException {
 

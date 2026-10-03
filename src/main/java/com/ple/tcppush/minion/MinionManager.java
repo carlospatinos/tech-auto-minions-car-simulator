@@ -1,17 +1,19 @@
-package com.example.tcppush.minion;
+package com.ple.tcppush.minion;
 
-import com.example.tcppush.config.MinionProperties;
-import jakarta.annotation.PreDestroy;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import com.ple.tcppush.config.MinionProperties;
+
+import jakarta.annotation.PreDestroy;
 
 @Service
 public class MinionManager {

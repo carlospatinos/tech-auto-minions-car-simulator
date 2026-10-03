@@ -1,8 +1,4 @@
-package com.example.tcppush.minion;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.ThreadContext;
+package com.ple.tcppush.minion;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -12,6 +8,10 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 
 /**
  * A virtual device that connects to a TCP endpoint and pushes its messages one by one,
