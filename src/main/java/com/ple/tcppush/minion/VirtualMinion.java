@@ -6,15 +6,12 @@ import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
 import java.time.Instant;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
-
-import io.jenetics.jpx.GPX;
 
 /**
  * A virtual device that connects to a TCP endpoint and pushes its messages one by one,
@@ -39,7 +36,6 @@ public class VirtualMinion {
     }
 
     public synchronized boolean start() {
-        loadGPXData();
         if (isAlive()) {
             log.warn("Minion {} is already running", config.imei());
             return false;
@@ -113,27 +109,6 @@ public class VirtualMinion {
             }
             ThreadContext.remove("imei");
         }
-    }
-
-    private void loadGPXData() {
-        final GPX gpx = GPX.builder()
-            .addTrack(track -> track
-                .addSegment(segment -> segment
-                    .addPoint(p -> p.lat(48.20100).lon(16.31651).ele(283))
-                    .addPoint(p -> p.lat(48.20112).lon(16.31639).ele(278))
-                    .addPoint(p -> p.lat(48.20126).lon(16.31601).ele(274))))
-            .build();
-            try {
-                GPX.write(gpx, Path.of("track.gpx"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        // InputStream in = Files.newInputStream(Paths.get("track.gpx"));
-        // GPX.read(in).tracks()
-        // .flatMap(Track::segments)
-        // .flatMap(TrackSegment::points)
-        // .forEach(System.out::println);
     }
 
     private void sendAll(BufferedWriter writer) throws IOException, InterruptedException {
