@@ -45,6 +45,32 @@ public class MinionManager {
         String host = o.getHost() != null ? o.getHost() : d.getHost();
         int port = o.getPort() != null ? o.getPort() : d.getPort();
         long wait = o.getWaitTimeMs() != null ? o.getWaitTimeMs() : d.getWaitTimeMs();
+        // String foxCommandsFilePath = o.getFoxCommandsFilePath() != null ? o.getFoxCommandsFilePath() : d.getFoxCommandsFilePath();
+
+        // List<String> fileMessages = null;
+        // Path path = Paths.get(foxCommandsFilePath);
+        // if (Files.exists(path)) {
+        //     try {
+        //         fileMessages = Files.readAllLines(path);
+        //         if (!fileMessages.isEmpty()) {
+        //             log.info("Using {} messages from file: {}", fileMessages.size(), foxCommandsFilePath);
+        //         }
+        //     } catch (Exception e) {
+        //         log.error("Failed to read messages from file: {}", foxCommandsFilePath, e);
+        //     }
+        // } else {
+        //     log.warn("Fox commands file does not exist: {}", foxCommandsFilePath);
+        // }
+
+
+        // List<String> messages = new ArrayList<>();
+        // if (fileMessages != null && !fileMessages.isEmpty()) {
+        //     messages = fileMessages;
+        // }  else {
+        //     messages = o.getMessages() != null && !o.getMessages().isEmpty()
+        //         ? o.getMessages() : d.getMessages();
+        // }
+
         List<String> messages = o.getMessages() != null && !o.getMessages().isEmpty()
                 ? o.getMessages() : d.getMessages();
 

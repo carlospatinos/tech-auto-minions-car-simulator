@@ -38,6 +38,7 @@ public class MinionProperties {
         private int port = 9000;
         @Min(0)
         private long waitTimeMs = 1000;
+        private String foxCommandsFilePath;
         private List<String> messages = new ArrayList<>();
     }
 
@@ -48,6 +49,7 @@ public class MinionProperties {
         private String host;
         private Integer port;
         private Long waitTimeMs;
+        private String foxCommandsFilePath;
         private List<String> messages;
     }
 }
